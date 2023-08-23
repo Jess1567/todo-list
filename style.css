@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-animation-name: bgpicture;
+    -webkit-animation-duration: 10s;
+    animation-name: bgpicture;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+h1 {
+    color: aquamarine;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+  width: 300px;
+  height: auto;
+  min-height: 300px;
+  padding: 20px;
+  background: transparent;
+  border: 1px solid aquamarine;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+}
+  .todo-input {
+    flex: 1;
+    outline: none;
+    padding: 10px 10px 10px 20px;
+     background-color: transparent;
+    border-radius: 20px;
+    color:aquamarine;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .todo-input::placeholder {
+    color:rgb(178, 255, 127);
+  }
+
+  .add-button {
+    border: none;
+    outline: none;
+    background: rgb(112, 216, 142);
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .empty-image {
+    margin: 5px auto 0;
+    display: block;
+  }
+
+  @-webkit-keyframes bgpicture {
+    0% {
+      background-image: url("1.jpg");
+    }
+    50% {
+      background-image: url("2.jpg");
+    }
+    100% {
+      background-image: url("3.jpg");
+    }
+    
+   
+  }
+  
+  @keyframes bgpicture {
+    0% {
+        background-image: url("1.jpg");
+      }
+      50% {
+        background-image: url("2.jpg");
+      }
+      100% {
+        background-image: url("3.jpg");
+      }
+    }
+
+    .todo {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(34, 42, 71);
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 5px 6px;
+      border: 1px solid aquamarine;
+    }
+
+    .todo:first-child {
+
+    }
+
+    .todo:last-child {
+      margin-bottom: 0;
+    }
+
+    .todo:hover {
+
+    }
+
+    .todo label {
+      cursor: pointer;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+    }
+
+    .todo span {
+      padding-left: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    span::before {
+      content: "";
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      margin-left: -30px;
+      border-radius: 100px;
+      border: 1px solid aquamarine;
+    }
+
+    input[type='checkbox'] {
+      visibility: hidden;
+    }
+
+    input:checked + span {
+      text-decoration: line-through;
+    }
+
+    .todo:hover input:checked + span::before, input:checked + span::before {
+      background: url(./check1.png) 50% 50% no-repeat #ffffff;
+      border-color: #ffffff;
+    }
+
+    .todo:hover span::before {
+      border-color: white;
+    }
+
+    .todo .delete-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: white;
+      font-size: 15px;
+    }
+
+    .todos-container {
+      height: 300px;
+      overflow: overlay;
+    }
+
+    .todos-container::-webkit-scrollbar-track {
+      background: white;
+    }
+
+    .todos-container::-webkit-scrollbar-track {
+      width: 0px;
+    }
+
+    .todos-container:hover::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .todos-container::-webkit-scrollbar-thumb {
+      background: white;
+      border-radius: 5px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .filter {
+      color: white;
+      padding: 4px 6px;
+      border-radius: 100px;
+      border: 0.5px solid aquamarine;
+      transition: all 0.2s ease;
+
+    }
+
+    .filter.active, .filter:hover {
+      background-color: rgb(116, 152, 151);
+    }
+
+    .delete-all {
+      display: flex;
+      padding: 3px;
+      cursor: pointer;
+
+    }
+
+    .delete-all:hover {
+      border-radius: 6px;
+      background-color: rgb(116, 152, 151);
+
+    }
